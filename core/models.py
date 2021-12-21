@@ -85,3 +85,30 @@ class Contact(models.Model):
 
     def __str__(self):
         return self.email
+
+
+class Effect(models.Model):
+    name = models.CharField(verbose_name='Эффект', max_length=50)
+    text = models.TextField(verbose_name='Описание эффекта', max_length=250)
+    image = models.ImageField(verbose_name='Фото')
+    on_main = models.BooleanField(verbose_name='Выводить на главной', default=False)
+
+    class Meta:
+        verbose_name = 'Эффект'
+        verbose_name_plural = 'Эффекты'
+
+    def __str__(self):
+        return self.name
+
+
+class HowItWork(models.Model):
+    name = models.CharField(verbose_name='Название', max_length=50)
+    text = models.TextField(verbose_name='Текст', max_length=1000)
+    on_main = models.BooleanField(verbose_name='Выводить на главной', default=False)
+
+    class Meta:
+        verbose_name = 'Как это работает'
+        verbose_name_plural = 'Как это работает'
+
+    def __str__(self):
+        return self.name

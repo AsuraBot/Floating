@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import MainInfo, Service, Promotion, Review, Contact
+from .models import MainInfo, Service, Promotion, Review, Contact, Effect, HowItWork
 
 
 @admin.register(Service)
@@ -17,6 +17,18 @@ class PromotionAdmin(admin.ModelAdmin):
 @admin.register(Review)
 class ReviewAdmin(admin.ModelAdmin):
     list_display = ['name', 'date', 'rating', 'moderated', 'on_main']
+
+
+@admin.register(Effect)
+class EffectAdmin(admin.ModelAdmin):
+    list_display = ['name', 'on_main']
+    list_editable = ['on_main']
+
+
+@admin.register(HowItWork)
+class HowItWorkAdmin(admin.ModelAdmin):
+    list_display = ['name', 'on_main']
+    list_editable = ['on_main']
 
 
 admin.site.register(Contact)
