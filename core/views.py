@@ -1,5 +1,4 @@
 from django.shortcuts import render
-
 from core.models import MainInfo, Service, Promotion, Review, Contact, Effect, HowItWork
 
 # Create your views here.
@@ -23,8 +22,10 @@ def main(request):
 def price(request):
     services = Service.objects.all()
     promotions = Promotion.objects.all()
+    promotion_types = Promotion.PROMOTION_TYPES
     return render(request, 'core/prices.html', {'services': services,
-                                                'promotions': promotions})
+                                                'promotions': promotions,
+                                                'promotion_types': promotion_types})
 
 
 def review(request):
@@ -36,4 +37,4 @@ def review(request):
 def contact(request):
     contacts = Contact.objects.all()
     return render(request, 'core/contacts.html', {'contacts': contacts,
-                                                })
+                                                  })
