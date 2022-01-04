@@ -1,9 +1,74 @@
 {% extends 'core/base.html' %}
 
+{% load static %}
+
 {% block title %}
-    Главная
+Главная
 {% endblock title %}
 
 {% block content %}
 
+<main class="main_page">
+    <div id="title" class="container-fluid">
+        <div class="row d-flex justify-content-center align-items-center">
+            <div>
+                <h1 class="text-center">Floating центр</h1>
+                <h2 class="text-center">Мистер Мозг</h2>
+                <h3 class="text-center">Впервые на КМВ</h3>
+            </div>
+        </div>
+    </div>
+
+    <div id="main_info" class="container-fluid">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-4 order-2 order-md-1 py-5">
+                    {% for info in info1 %}
+                    <div>
+                        <h5><i class="{{ info.icon }}"></i> {{ info.title }}</h5>
+                        <p>{{ info.text }}</p>
+                    </div>
+                    <br>
+                    {% endfor %}
+                </div>
+                <div class="col-12 col-md-4 order-1 order-md-2">
+                    <div class="d-flex justify-content-center align-items-center">
+                        <span>Расслабление в невесомости</span>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4 order-3 py-5">
+                    {% for info in info2 %}
+                    <div>
+                        <h5><i class="{{ info.icon }}"></i> {{ info.title }}</h5>
+                        <p>{{ info.text }}</p>
+                    </div>
+                    <br>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="yoga"></div>
+
+    <div id="price" class="container-fluid mt-5">
+        <div class="row">
+            <div class="col-6"></div>
+            <div class="col-6">
+                <h4 class="py-5">Цены на сеансы флоатинга</h4>
+                <div class="row justify-content-around pb-5">
+                    {% for service in services %}
+                    <div class="price-item col-4 py-5">
+                        <p><i class="{{ service.icon }}"></i></p>
+                        <h5>{{service.name}}</h5>
+                        <h6>{{service.price}}<span>/час</span></h6>
+                        <p class="info">{{service.info|linenumbers|linebreaksbr}}</p>
+                        <button type="button" class="btn btn-secondary px-4 py-2 mt-5">Записаться</button>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
 {% endblock content %}

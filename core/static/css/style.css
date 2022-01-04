@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
 
 body {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Roboto Slab', serif;
 }
 
 header{
@@ -24,15 +24,11 @@ header a:hover {
 
 footer {
     background-color: #0c1929;
+    color: #ffffff;
 }
 
 footer img {
     width: 135px;
-}
-
-footer p {
-    color: #ffffff;
-    text-align: center;
 }
 
 footer a {
@@ -43,4 +39,114 @@ footer a {
 footer a:hover {
     color: #ffffff;
     text-decoration: underline;
+}
+
+footer>div div:last-child {
+    color: #979797;
+}
+
+#title .row {
+    height: calc(100vh - 135px);
+    padding: 0;
+    background-image: url("../images/main_img.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+#title h1 {
+    
+    font-size: 7vw;
+    color: #ffffff;
+}
+
+#title h2 {
+    font-size: 5vw;
+    color: #c8ff00;
+}
+
+#title h3 {
+    font-size: 3vw;
+    color: #ffffff;
+}
+
+#main_info {
+    background-color: #202020;
+    color: #ffffff;
+    text-align:justify;
+    padding-bottom: 25vh;
+}
+
+#main_info p {
+    color: #979797;
+}
+
+#main_info .row>div:nth-child(2) {
+    font-size: 200%;
+    padding-top: 280px;
+    text-align: center;
+    background-image: url("../images/main_info_bg.png");
+    background-position: bottom;
+}
+
+#main_info .row>div:nth-child(odd)>div:hover h5{
+    color: #fda036;
+}
+
+#main_info .row>div:nth-child(odd)>div:hover p{
+    color: #ffffff;
+}
+
+.yoga {
+    height: 35vh;
+    margin-top: -35vh;
+    background-image: url("../images/yoga_img.png");
+    background-repeat: no-repeat;
+    background-position-x: right;
+}
+
+#price {
+    background-color: #202020;
+    color: #ffffff;
+    text-align: center;
+}
+
+#price h4 {
+    font-size: 250%;
+}
+
+#price .price-item>p:first-child i {
+    font-size: 200%;
+}
+
+#price .price-item h6 {
+    padding: 50px 0;
+    font-size: 300%;
+}
+
+#price .price-item h6 span {
+    color: #979797;
+    font-size: 40%;
+}
+
+#price>.row>div:first-child {
+    background-image: url("../images/price_img.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+#price .price-item {
+    border: 1px solid #fda036;
+}
+
+#price .price-item .info {
+    text-align: left;
+    padding-left: 50px;
+    color: #979797;
+}
+
+#price .btn {
+    color: #000000;
+    background-color: #fda036;
 }

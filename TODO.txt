@@ -1,14 +1,10 @@
 Main page
-    Main Photo + main text
-    Main info + animation
-    Prices on main
     Influence on main
     Accordeon HowItWork
     Reviews
     Contacts (Map?)
 /prices
     Photo
-    Animations?
 /reviews
 /contacts
 /MedAngel?
