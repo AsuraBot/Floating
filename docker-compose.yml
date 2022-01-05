@@ -1,0 +1,31 @@
+version: "3"
+
+services:
+  app:
+    build:
+      context: ./
+      dockerfile: ./infrastructure/app/Dockerfile
+    volumes:
+      - ./db.sqlite3:/app/db.sqlite3
+      - ./media:/app/media
+      - ./static:/app/static
+    environment:
+      DEBUG: "False"
+    ports:
+      - "8000:8000"
+    restart: always
+    command: bash -c " python manage.py collectstatic && python manage.py migrate &&
+      gunicorn src.wsgi:application --bind 0.0.0.0:8000"
+
+  nginx:
+    build:
+      context: ./
+      dockerfile: ./infrastructure/nginx/Dockerfile
+    volumes:
+      - ./media:/app/media
+      - ./static:/app/static
+    ports:
+      - "80:80"
+    restart: always
+    depends_on:
+      - app
