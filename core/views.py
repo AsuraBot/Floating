@@ -1,16 +1,13 @@
 from django.shortcuts import render
-from core.models import MainInfo, Service, Promotion, Review, Contact, Effect, HowItWork
-
-# Create your views here.
+from core.models import MainInfo, Service, Promotion, Contact, Effect, HowItWork
 
 
 def main(request):
     infos = MainInfo.objects.all()
     services = Service.objects.filter(is_active=True, on_main=True)
-    reviews = Review.objects.all()
     contacts = Contact.objects.all()
-    effects = Effect.objects.all()
-    howitworks = HowItWork.objects.all()
+    effects = Effect.objects.filter(on_main=True)
+    howitworks = HowItWork.objects.filter(on_main=True)
     return render(
         request,
         "core/main.html",
@@ -18,7 +15,6 @@ def main(request):
             "info1": infos[:3],
             "info2": infos[3:6],
             "services": services,
-            "reviews": reviews,
             "contacts": contacts,
             "effects": effects,
             "howitworks": howitworks,
@@ -37,27 +33,5 @@ def price(request):
             "services": services,
             "promotions": promotions,
             "promotion_types": promotion_types,
-        },
-    )
-
-
-def review(request):
-    reviews = Review.objects.all()
-    return render(
-        request,
-        "core/reviews.html",
-        {
-            "reviews": reviews,
-        },
-    )
-
-
-def contact(request):
-    contacts = Contact.objects.all()
-    return render(
-        request,
-        "core/contacts.html",
-        {
-            "contacts": contacts,
         },
     )

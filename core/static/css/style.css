@@ -142,11 +142,84 @@ footer>div div:last-child {
 
 #price .price-item .info {
     text-align: left;
-    padding-left: 50px;
+    padding-left: 10%;
     color: #979797;
 }
 
 #price .btn {
     color: #000000;
     background-color: #fda036;
+}
+
+#effect {
+    padding: 100px 0 50px 0;
+}
+
+#effect .card {
+    width: 400px;
+}
+
+#effect .card-img-overlay h5 {
+    color: #ffffff;
+    font-size: 200%;
+    text-align: center;
+    padding-top: 200px;
+    text-shadow: 2px 2px 2px black, 0 0 1em black;
+}
+
+#effect .card-body {
+    font-size: 120%;
+}
+
+#how-it-works .carousel {
+    background-color: black;
+}
+
+#how-it-works .carousel-item img {
+    height: 40vw;
+    opacity: 0.4;
+}
+
+#how-it-works .carousel-caption {
+    font-size: 1.3vw;
+    color: #ffffff;
+    text-shadow: 4px 4px 4px black, 0 0 1em black;
+    height: 35vw;
+}
+
+#how-it-works .carousel-caption h5 {
+    font-size: 3vw;
+}
+
+#contacts {
+    font-size: 120%;
+}
+
+#contacts h3 {
+    text-align: center;
+    font-size: 200%;
+    margin: 50px;
+}
+
+#contacts a {
+    text-decoration: none;
+}
+
+#contacts li {
+    list-style: none;
+    padding-bottom: 1vw;
+}
+
+#contacts span {
+    color: #666565;
+}
+
+#contacts .fa-whatsapp {
+    font-size: 2vw;
+    color: #027702;
+}
+
+#contacts .fa-instagram {
+    font-size: 2vw;
+    color: #ff3333;
 }

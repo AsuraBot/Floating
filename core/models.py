@@ -1,6 +1,4 @@
-from django.conf import settings
 from django.db import models
-from django.core.validators import MaxValueValidator
 
 
 class MainInfo(models.Model):
@@ -58,29 +56,14 @@ class Promotion(models.Model):
         return self.name
 
 
-class Review(models.Model):
-    name = models.CharField(verbose_name="Имя", max_length=50)
-    text = models.TextField(verbose_name="Текст отзыва", max_length=1000)
-    rating = models.PositiveSmallIntegerField(
-        verbose_name="Рейтинг", validators=(MaxValueValidator(10),)
-    )
-    date = models.DateTimeField(verbose_name="Дата отзыва", auto_now_add=True)
-    moderated = models.BooleanField(verbose_name="Отзыв проверен", default=False)
-    on_main = models.BooleanField(verbose_name="Выводить на главной", default=False)
-
-    class Meta:
-        verbose_name = "Отзыв"
-        verbose_name_plural = "Отзывы"
-
-    def __str__(self):
-        return self.name
-
-
 class Contact(models.Model):
     email = models.EmailField(verbose_name="Почта", max_length=50)
     phone = models.CharField(verbose_name="Телефон", max_length=20)
     address = models.CharField(verbose_name="Адрес", max_length=70)
+    instagram = models.CharField(verbose_name="Instagram", max_length=80)
+    whatsapp = models.CharField(verbose_name="WhatsApp", max_length=20)
     schedule = models.CharField(verbose_name="График работы", max_length=150)
+    map = models.TextField(verbose_name="Карта")
 
     class Meta:
         verbose_name = "Контакты"
@@ -106,7 +89,8 @@ class Effect(models.Model):
 
 class HowItWork(models.Model):
     name = models.CharField(verbose_name="Название", max_length=50)
-    text = models.TextField(verbose_name="Текст", max_length=1000)
+    text = models.TextField(verbose_name="Текст")
+    image = models.ImageField(verbose_name="Фото")
     on_main = models.BooleanField(verbose_name="Выводить на главной", default=False)
 
     class Meta:

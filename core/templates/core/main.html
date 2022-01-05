@@ -53,8 +53,8 @@
 
     <div id="price" class="container-fluid mt-5">
         <div class="row">
-            <div class="col-6"></div>
-            <div class="col-6">
+            <div class="col-xl-6"></div>
+            <div class="col-xl-6">
                 <h4 class="py-5">Цены на сеансы флоатинга</h4>
                 <div class="row justify-content-around pb-5">
                     {% for service in services %}
@@ -63,12 +63,78 @@
                         <h5>{{service.name}}</h5>
                         <h6>{{service.price}}<span>/час</span></h6>
                         <p class="info">{{service.info|linenumbers|linebreaksbr}}</p>
-                        <button type="button" class="btn btn-secondary px-4 py-2 mt-5">Записаться</button>
+                        <!-- <button type="button" class="btn btn-secondary px-4 py-2 mt-5">Записаться</button> -->
                     </div>
                     {% endfor %}
                 </div>
             </div>
         </div>
+    </div>
+
+    <div id="effect" class="container">
+        <div class="row justify-content-around">
+            {% for effect in effects %}
+            <div class="card p-0 mb-5">
+                <img src="{{ effect.image.url }}" class="card-img-top" alt="{{effect.name}}">
+                <div class="card-img-overlay">
+                    <h5 class="card-title">{{effect.name}}</h5>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">{{effect.text}}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <div id="how-it-works" class="container-fluid p-0">
+        <div id="carouselExampleDark" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                {% for howitwork in howitworks %}
+                <div class="carousel-item {% if howitwork == howitworks.0 %} active {% endif %}"
+                    data-bs-interval="10000">
+                    <img src="{{howitwork.image.url}}" class="d-block w-100" alt="{{howitwork.name}}">
+                    <div class="carousel-caption d-md-block">
+                        <h5>{{howitwork.name}}</h5>
+                        <p>{{howitwork.text}}</p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+
+    <div id="contacts" class="container p-0 my-5">
+        <h3>Контакты</h3>
+        {% for contact in contacts %}
+        <div class="row d-flex">
+            <div class="col-lg-4 contact_info">
+                <ul class="p-0">
+                    <li><span>Адрес: </span>{{contact.address}}</li>
+                    <li><span>E-mail: </span>{{contact.email}}</li>
+                    <li><span>Телефон: </span>{{contact.phone}}</li>
+                    <li><a href="https://api.whatsapp.com/send/?phone={{contact.whatsapp}}&text&app_absent=0"><i
+                                class="fab fa-whatsapp"></i> wa.me/{{contact.whatsapp}}</a>
+                    </li>
+                    <li><a href="{{contact.instagram}}"><i class="fab fa-instagram"></i> @mister_mozg</a></li>
+                    <li><span>Режим работы: </span><br>{{contact.schedule|safe}}</li>
+                </ul>
+            </div>
+            <div class="col-lg-8 map">
+                {{contact.map|safe}}
+            </div>
+        </div>
+        {% endfor %}
     </div>
 </main>
 {% endblock content %}

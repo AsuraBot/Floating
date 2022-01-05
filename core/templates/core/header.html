@@ -1,21 +1,24 @@
 {% load static %}
 
-<header class="container-fluid">
+<header id="header" class="container-fluid">
     <div class="container py-4">
         <div class="d-flex justify-content-between">
             <img src="{% static 'images/main_logo.png' %}">
             <div class="d-flex align-items-center justify-content-between">
                 <div class="m-3">
-                    <a href="">Главная</a>
+                    <a href="{% url 'main' %}#header">Главная</a>
                 </div>
                 <div class="m-3">
-                    <a href="">Цены</a>
+                    <a href="{% url 'main' %}#effect">Влияние флоатинга</a>
                 </div>
                 <div class="m-3">
-                    <a href="">Отзывы</a>
+                    <a href="{% url 'main' %}#how-it-works">Как это работает?</a>
                 </div>
                 <div class="m-3">
-                    <a href="">Контакты</a>
+                    <a href="{% url 'prices' %}">Цены</a>
+                </div>
+                <div class="m-3">
+                    <a href="{% url 'main' %}#contacts">Контакты</a>
                 </div>
             </div>
         </div>

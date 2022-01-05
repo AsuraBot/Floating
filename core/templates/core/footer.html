@@ -7,20 +7,23 @@
         </div>
         <div class="d-flex justify-content-center">
             <div class="m-3">
-                <a href="">Главная</a>
+                <a href="{% url 'main' %}#header">Главная</a>
             </div>
             <div class="m-3">
-                <a href="">Цены</a>
+                <a href="{% url 'main' %}#effect">Влияние флоатинга</a>
             </div>
             <div class="m-3">
-                <a href="">Отзывы</a>
+                <a href="{% url 'main' %}#how-it-works">Как это работает?</a>
             </div>
             <div class="m-3">
-                <a href="">Контакты</a>
+                <a href="{% url 'prices' %}">Цены</a>
+            </div>
+            <div class="m-3">
+                <a href="{% url 'main' %}#contacts">Контакты</a>
             </div>
         </div>
         <div class="text-center pt-3">
-            Copyright © 2021 Мистер Мозг Флоатинг
+            Copyright © 2022 Мистер Мозг Флоатинг
         </div>
     </div>
 </footer>
