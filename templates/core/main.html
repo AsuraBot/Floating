@@ -22,7 +22,7 @@
     <div id="main_info" class="container-fluid">
         <div class="container">
             <div class="row">
-                <div class="col-12 col-md-4 order-2 order-md-1 py-5">
+                <div class="col-12 col-md-4 order-2 order-md-1 pt-5">
                     {% for info in info1 %}
                     <div>
                         <h5><i class="{{ info.icon }}"></i> {{ info.title }}</h5>
@@ -36,7 +36,7 @@
                         <span>Расслабление в невесомости</span>
                     </div>
                 </div>
-                <div class="col-12 col-md-4 order-3 py-5">
+                <div class="col-12 col-md-4 order-3 pt-5">
                     {% for info in info2 %}
                     <div>
                         <h5><i class="{{ info.icon }}"></i> {{ info.title }}</h5>
@@ -58,12 +58,11 @@
                 <h4 class="py-5">Цены на сеансы флоатинга</h4>
                 <div class="row justify-content-around pb-5">
                     {% for service in services %}
-                    <div class="price-item col-4 py-5">
+                    <div class="price-item col-md-4 col-10 mb-5 py-5">
                         <p><i class="{{ service.icon }}"></i></p>
                         <h5>{{service.name}}</h5>
                         <h6>{{service.price}}<span>/час</span></h6>
                         <p class="info">{{service.info|linenumbers|linebreaksbr}}</p>
-                        <!-- <button type="button" class="btn btn-secondary px-4 py-2 mt-5">Записаться</button> -->
                     </div>
                     {% endfor %}
                 </div>
@@ -72,7 +71,7 @@
     </div>
 
     <div id="effect" class="container">
-        <div class="row justify-content-around">
+        <div class="row justify-content-around m-0">
             {% for effect in effects %}
             <div class="card p-0 mb-5">
                 <img src="{{ effect.image.url }}" class="card-img-top" alt="{{effect.name}}">
@@ -117,9 +116,9 @@
     <div id="contacts" class="container p-0 my-5">
         <h3>Контакты</h3>
         {% for contact in contacts %}
-        <div class="row d-flex">
+        <div class="row d-flex m-0">
             <div class="col-lg-4 contact_info">
-                <ul class="p-0">
+                <ul class="pl-1">
                     <li><span>Адрес: </span>{{contact.address}}</li>
                     <li><span>E-mail: </span>{{contact.email}}</li>
                     <li><span>Телефон: </span>{{contact.phone}}</li>
@@ -132,7 +131,7 @@
                     <li><span>Режим работы: </span><br>{{contact.schedule|safe}}</li>
                 </ul>
             </div>
-            <div class="col-lg-8 map">
+            <div class="col-lg-8 p-0 map">
                 {{contact.map|safe}}
             </div>
         </div>
