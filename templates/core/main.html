@@ -123,10 +123,12 @@
                     <li><span>Адрес: </span>{{contact.address}}</li>
                     <li><span>E-mail: </span>{{contact.email}}</li>
                     <li><span>Телефон: </span>{{contact.phone}}</li>
-                    <li><a href="https://api.whatsapp.com/send/?phone={{contact.whatsapp}}&text&app_absent=0"><i
+                    <li><a target="_blank"
+                            href="https://api.whatsapp.com/send/?phone={{contact.whatsapp}}&text&app_absent=0"><i
                                 class="fab fa-whatsapp"></i> wa.me/{{contact.whatsapp}}</a>
                     </li>
-                    <li><a href="{{contact.instagram}}"><i class="fab fa-instagram"></i> @mister_mozg</a></li>
+                    <li><a target="_blank" href="{{contact.instagram}}"><i class="fab fa-instagram"></i>
+                            @mister_mozg</a></li>
                     <li><span>Режим работы: </span><br>{{contact.schedule|safe}}</li>
                 </ul>
             </div>
