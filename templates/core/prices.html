@@ -1,0 +1,39 @@
+{% extends 'core/base.html' %}
+
+{% block title %}
+Цены
+{% endblock title %}
+
+{% block content %}
+<main class="price">
+    <div id="price_title" class="container py-5">
+        <h1>Цены на Флоатинг</h1>
+        <div class="services mt-5">
+            <h2>Флоатинг</h2>
+            {% for service in services %}
+            <div class="row service-list">
+                <div class="col-10">{{ service.name }}: {{ service.duration }} мин. ({{ service.description }})</div>
+                <div class="col-2 service-price">{{ service.price }} руб.</div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="promotions">
+            {% for promotion_type in promotion_types %}
+            <h2 class="mt-5">{{ promotion_type.1 }}</h2>
+            {% for promotion in promotions %}
+            {% if promotion.type == promotion_type.0 %}
+            <div class="row service-list">
+                <div class="col-10">
+                    {{promotion.name}}: {{ promotion.duration }} мин. ({{ promotion.description }})
+                </div>
+                <div class="col-2 service-price">
+                    {{promotion.price}} руб.
+                </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+            {% endfor %}
+        </div>
+    </div>
+</main>
+{% endblock content %}

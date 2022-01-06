@@ -223,3 +223,23 @@ footer>div div:last-child {
     font-size: 2vw;
     color: #ff3333;
 }
+
+
+#price_title h1 {
+    text-align: center;
+    padding-top: 10%;
+    font-size: 3vw;
+    background-image: url("../images/price_page_img.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 20vw;
+}
+
+#price_title .service-list:hover {
+    color: #fda036;
+}
+
+#price_title .service-price {
+    text-align: right;
+}
