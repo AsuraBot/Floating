@@ -11,8 +11,8 @@ services:
       - ./static:/app/static
     environment:
       DEBUG: "False"
-    ports:
-      - "8000:8000"
+    expose:
+      - "8000"
     restart: always
     command: bash -c "python manage.py collectstatic --noinput && python manage.py
       makemigrations && python manage.py migrate && gunicorn
