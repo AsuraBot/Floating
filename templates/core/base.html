@@ -1,20 +1,42 @@
 <!DOCTYPE html>
 <html lang="ru">
-  <head>
-    {% include 'core/head.html' %}
-    <title>
+
+<head>
+  {% include 'core/head.html' %}
+  <title>
     {% block title %}
     {% endblock title %}
-    </title>
-  </head>
-  <body>
-    {% include 'core/header.html' %}
+  </title>
+</head>
 
-    {% block content %}
-    {% endblock content %}
+<body>
+  {% include 'core/header.html' %}
 
-    {% include 'core/footer.html' %}
+  {% block content %}
+  {% endblock content %}
 
-    {% include 'core/scripts.html' %}
-  </body>
+  {% include 'core/footer.html' %}
+
+  <!-- Yandex.Metrika counter -->
+  <script type="text/javascript">
+    (function (m, e, t, r, i, k, a) {
+      m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments) };
+      m[i].l = 1 * new Date(); k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+    })
+      (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+    ym(87545622, "init", {
+      clickmap: true,
+      trackLinks: true,
+      accurateTrackBounce: true
+    });
+  </script>
+  <noscript>
+    <div><img src="https://mc.yandex.ru/watch/87545622" style="position:absolute; left:-9999px;" alt="" /></div>
+  </noscript>
+  <!-- /Yandex.Metrika counter -->
+
+  {% include 'core/scripts.html' %}
+</body>
+
 </html>
